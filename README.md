@@ -2,7 +2,7 @@
 
 ## Description
 
-A chrome browser extension for displaying ('tosting') console errors, warnings and logs to your browser without having to manualy open the console.
+A chrome browser extension for displaying ('toasting') console errors, warnings and logs to your browser without having to manualy open the console.
 
 ## Screenshot
 
