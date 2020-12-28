@@ -6,7 +6,7 @@ A chrome browser extension for displaying ('tosting') console errors, warnings a
 
 ## Screenshot
 
-![](/docs/screenshot.png "Screenshot")
+![](/docs/screenshot.PNG "Screenshot")
 
 ## Known issues
 
