@@ -38,13 +38,3 @@ var originalwarn = console.warn;
     originalwarn.apply(console, arguments);
   };
 })(this);
-
-console.error("Failed to load resource: net::ERR_BLOCKED_BY_CLIENT");
-console.error("Failed to load resource: net::ERR_BLOCKED_BY_CLIENT");
-console.error("Failed to load resource: net::ERR_BLOCKED_BY_CLIENT");
-
-console.log("Default Console Log!");
-console.log("Default Console Log!");
-
-console.warn("Warning Log!");
-console.warn("Warning Log!");
