@@ -1,0 +1,44 @@
+#toast-window {
+  padding: 16px;
+  max-width: 25vw;
+  max-height: 50%;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  z-index: 10000000;
+  overflow: auto;
+}
+
+.ignore-pointer {
+  pointer-events: none;
+}
+.listen-pointer {
+  pointer-events: auto;
+}
+
+.console-log-toast {
+  font-family: "Trebuchet MS", sans-serif !important;
+  background-color: #6c757d !important;
+  color: white !important;
+  padding: 8px !important;
+  line-height: 20px !important;
+  font-size: 16px !important;
+  border-radius: 10px;
+  font-weight: 500 !important;
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+  text-align: right;
+  box-shadow: rgb(170, 170, 170) 0px 0px 12px 0px;
+}
+
+.console-log-toast.error {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+.console-log-toast.warn {
+  background-color: #ffc107 !important;
+  color: black !important;
+}
+
+

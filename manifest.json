@@ -1,0 +1,15 @@
+{
+  "name": "Toaster",
+  "version": "1.0",
+  "description": "Toast console errors to web page",
+  "manifest_version": 2,
+  "web_accessible_resources": ["/src/toast.html", "/src/console-listener.js"],
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "css": ["/src/bootstrap-grid.min.css", "/src/style.css"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
