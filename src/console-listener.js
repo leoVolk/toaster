@@ -8,7 +8,7 @@ var originalwarn = console.warn;
     // Do really interesting stuff
     toastLogHolder.insertAdjacentHTML(
       "afterbegin",
-      '<div class="row justify-content-end"> <div class="col-md-auto align-self-end" id="toast-log-holder"> <p class="console-log-toast">' +
+      '<div class="row justify-content-end"> <div class="col align-self-end" id="toast-log-holder"> <p class="console-log-toast">' +
         txt +
         "</p> </div> </div>"
     );
@@ -19,7 +19,7 @@ var originalwarn = console.warn;
     // Do really interesting stuff
     toastLogHolder.insertAdjacentHTML(
       "afterbegin",
-      '<div  class="row justify-content-end"><div class="col-md-auto align-self-end" id="toast-log-holder"><p class="console-log-toast error">' +
+      '<div  class="row justify-content-end"><div class="col align-self-end" id="toast-log-holder"><p class="console-log-toast error">' +
         txt +
         "</p> </div> </div>"
     );
@@ -30,7 +30,7 @@ var originalwarn = console.warn;
     // Do really interesting stuff
     toastLogHolder.insertAdjacentHTML(
       "afterbegin",
-      '<div  class="row justify-content-end"><div class="col-md-auto align-self-end" id="toast-log-holder"><p class="console-log-toast warn">' +
+      '<div  class="row justify-content-end"><div class="col align-self-end" id="toast-log-holder"><p class="console-log-toast warn">' +
         txt +
         "</p> </div> </div>"
     );
