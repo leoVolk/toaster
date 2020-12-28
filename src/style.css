@@ -41,4 +41,7 @@
   color: black !important;
 }
 
-
+.container,
+.row {
+  width: auto !important;
+}
