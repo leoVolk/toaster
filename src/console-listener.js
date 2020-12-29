@@ -1,14 +1,17 @@
 const toastLogHolder = document.getElementById("toast-log-holder");
-var originallog = console.log;
-var originalerror = console.error;
-var originalwarn = console.warn;
+
+var logMessages = [];
+
 /** listener for logs, errors and warnings*/
 (function () {
+  var originallog = console.log;
+  var originalerror = console.error;
+  var originalwarn = console.warn;
   console.log = function (txt) {
     // Do really interesting stuff
     toastLogHolder.insertAdjacentHTML(
       "afterbegin",
-      '<div class="row justify-content-end"> <div class="col align-self-end" id="toast-log-holder"> <p class="console-log-toast">' +
+      '<div  class="toast-row "><div class="toast-col" id="toast-log-holder"> <p class="console-log-toast">' +
         txt +
         "</p> </div> </div>"
     );
@@ -19,7 +22,7 @@ var originalwarn = console.warn;
     // Do really interesting stuff
     toastLogHolder.insertAdjacentHTML(
       "afterbegin",
-      '<div  class="row justify-content-end"><div class="col align-self-end" id="toast-log-holder"><p class="console-log-toast error">' +
+      '<div  class="toast-row"><div class="toast-col" id="toast-log-holder"> <p class="console-log-toast error">' +
         txt +
         "</p> </div> </div>"
     );
@@ -30,7 +33,7 @@ var originalwarn = console.warn;
     // Do really interesting stuff
     toastLogHolder.insertAdjacentHTML(
       "afterbegin",
-      '<div  class="row justify-content-end"><div class="col align-self-end" id="toast-log-holder"><p class="console-log-toast warn">' +
+      '<div  class="toast-row "><div class="toast-col" id="toast-log-holder"> <p class="console-log-toast warn">' +
         txt +
         "</p> </div> </div>"
     );
