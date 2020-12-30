@@ -6,7 +6,6 @@ document.documentElement.insertAdjacentHTML(
   `
 );
 
-addLocalScript("/src/console-listener.js");
 /**
  * create a script in head from local js files
  * @param {*} src
@@ -16,3 +15,5 @@ function addLocalScript(src) {
   script.src = chrome.extension.getURL(src);
   document.documentElement.appendChild(script);
 }
+
+addLocalScript("/src/console-listener.js");

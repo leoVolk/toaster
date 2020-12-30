@@ -1,5 +1,4 @@
 console.log("console listener initiated");
-
 const toastLogHolder = document.getElementById("toast-log-holder");
 
 (function (w) {
@@ -141,32 +140,66 @@ const toastLogHolder = document.getElementById("toast-log-holder");
 
 ConsoleListener.on("warn", function (txt) {
   toastLogHolder.insertAdjacentHTML(
-    "afterbegin",
+    "beforeend",
     createToastTemplate(txt, "warn")
   );
 });
 
 ConsoleListener.on("error", function (txt) {
   toastLogHolder.insertAdjacentHTML(
-    "afterbegin",
+    "beforeend",
+    createToastTemplate(txt, "error")
+  );
+});
+
+ConsoleListener.on("exception", function (txt) {
+  toastLogHolder.insertAdjacentHTML(
+    "beforeend",
+    createToastTemplate(txt, "error")
+  );
+});
+
+ConsoleListener.on("assert", function (txt) {
+  toastLogHolder.insertAdjacentHTML(
+    "beforeend",
+    createToastTemplate(txt, "error")
+  );
+});
+
+ConsoleListener.on("trace", function (txt) {
+  toastLogHolder.insertAdjacentHTML(
+    "beforeend",
     createToastTemplate(txt, "error")
   );
 });
 
 ConsoleListener.on("info", function (txt) {
-  toastLogHolder.insertAdjacentHTML("afterbegin", createToastTemplate(txt, ""));
+  toastLogHolder.insertAdjacentHTML("beforeend", createToastTemplate(txt, ""));
+});
+
+ConsoleListener.on("dir", function (txt) {
+  toastLogHolder.insertAdjacentHTML("beforeend", createToastTemplate(txt, ""));
 });
 
 ConsoleListener.on("debug", function (txt) {
-  toastLogHolder.insertAdjacentHTML("afterbegin", createToastTemplate(txt, ""));
+  toastLogHolder.insertAdjacentHTML("beforeend", createToastTemplate(txt, ""));
 });
 
-function createToastTemplate(text, type) {
+ConsoleListener.on("log", function (txt) {
+  toastLogHolder.insertAdjacentHTML("beforeend", createToastTemplate(txt, ""));
+});
+
+/** for debugging */
+/* ConsoleListener.on(function (all) {
+  toastLogHolder.insertAdjacentHTML("beforeend", createToastTemplate(all, ""));
+}); */
+
+createToastTemplate = (text, type) => {
   return (
-    '<div  class="toast-row "><div class="toast-col" id="toast-log-holder"> <p class="console-log-toast ' +
+    '<div class="toast-row toast-justify-content-end"><div class="toast-col toast-align-self-end" id="toast-log-holder"> <p style="float:right;" class="console-log-toast ' +
     type +
     '">' +
     text +
     "</p> </div> </div>"
   );
-}
+};
