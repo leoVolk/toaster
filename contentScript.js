@@ -1,7 +1,9 @@
 document.documentElement.insertAdjacentHTML(
   "beforeend",
-  `<div id="toast-window" class="">
-      <div class="toast-container ignore-pointer" id="toast-log-holder"> </div>
+  `<div class="toast-holder">
+    <div id="toast-window" class="">
+        <div class="toast-container ignore-pointer" id="toast-log-holder"> </div>
+    </div>
   </div>
   `
 );
@@ -10,10 +12,10 @@ document.documentElement.insertAdjacentHTML(
  * create a script in head from local js files
  * @param {*} src
  */
-function addLocalScript(src) {
+function addScript(src, local) {
   const script = document.createElement("script");
-  script.src = chrome.extension.getURL(src);
+  script.type = "text/javascript";
+  script.src = local ? chrome.extension.getURL(src) : src;
   document.documentElement.appendChild(script);
 }
-
-addLocalScript("/src/console-listener.js");
+addScript("/src/console-listener.js", true);

@@ -1,4 +1,5 @@
 console.log("console listener initiated");
+
 const toastLogHolder = document.getElementById("toast-log-holder");
 
 (function (w) {
@@ -189,6 +190,14 @@ ConsoleListener.on("log", function (txt) {
   toastLogHolder.insertAdjacentHTML("beforeend", createToastTemplate(txt, ""));
 });
 
+function handleXMLHttp() {
+  var sendx = XMLHttpRequest.prototype.send;
+  window.XMLHttpRequest.prototype.send = function () {
+    handleAsync(this);
+    return sendx.apply(this, arguments);
+  };
+}
+
 /** for debugging */
 /* ConsoleListener.on(function (all) {
   toastLogHolder.insertAdjacentHTML("beforeend", createToastTemplate(all, ""));
@@ -199,7 +208,9 @@ createToastTemplate = (text, type) => {
     '<div class="toast-row toast-justify-content-end"><div class="toast-col toast-align-self-end" id="toast-log-holder"> <p style="float:right;" class="console-log-toast ' +
     type +
     '">' +
-    text +
+    JSON.stringify(text) +
     "</p> </div> </div>"
   );
 };
+
+window.addEventListener("load", function (event) {});
