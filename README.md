@@ -6,7 +6,7 @@ A chrome browser extension for displaying ('toasting') console errors, warnings 
 
 ## Screenshot
 
-![](/docs/screenshot.PNG "Screenshot")
+![](https://github.com/leoVolk/toaster/blob/master/docs/screenshot.PNG?raw=true "Screenshot")
 
 ## Known issues
 
